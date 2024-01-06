@@ -4,12 +4,20 @@ import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@re
 
 import stylesheet from './styles/tailwind.css'
 import Footer from './components/Footer'
-import fontStylesheetUrl from './styles/font.css'
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
   { rel: 'stylesheet', href: stylesheet },
-  { rel: 'stylesheet', href: fontStylesheetUrl },
+  { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+  {
+    rel: 'preconnect',
+    href: 'https://fonts.gstatic.com',
+    crossOrigin: 'anonymous',
+  },
+  {
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap',
+  },
 ]
 
 export default function App() {
@@ -21,7 +29,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="font-figtree flex min-h-screen flex-col items-center justify-center">
+      <body className="font-figtree bg-yellow flex min-h-screen flex-col items-center justify-center text-black">
         <Outlet />
         <Footer className="m-4 mt-auto" />
         <ScrollRestoration />

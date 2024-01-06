@@ -1,9 +1,14 @@
 import type { MetaFunction } from '@remix-run/node'
+import Card from '~/components/Card'
 
 export const meta: MetaFunction = () => {
-  return [{ title: 'Huddle Landing Page' }, { name: 'description', content: 'A Challenge from Frontend Mentor!' }]
+  return [{ title: 'Blog Preview Card' }, { name: 'description', content: 'A Challenge from Frontend Mentor!' }]
 }
 
 export default function Index() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>
+  return (
+    <main className=" my-auto p-6">
+      <Card />
+    </main>
+  )
 }
