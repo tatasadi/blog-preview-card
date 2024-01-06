@@ -2,22 +2,14 @@ import { cssBundleHref } from '@remix-run/css-bundle'
 import type { LinksFunction } from '@remix-run/node'
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react'
 
-import stylesheet from '~/tailwind.css'
+import stylesheet from './styles/tailwind.css'
 import Footer from './components/Footer'
+import fontStylesheetUrl from './styles/font.css'
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
   { rel: 'stylesheet', href: stylesheet },
-  { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-  {
-    rel: 'preconnect',
-    href: 'https://fonts.gstatic.com',
-    crossOrigin: 'anonymous',
-  },
-  {
-    rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap',
-  },
+  { rel: 'stylesheet', href: fontStylesheetUrl },
 ]
 
 export default function App() {
@@ -29,7 +21,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="flex min-h-screen flex-col items-center justify-center font-open-sans">
+      <body className="font-figtree flex min-h-screen flex-col items-center justify-center">
         <Outlet />
         <Footer className="m-4 mt-auto" />
         <ScrollRestoration />
