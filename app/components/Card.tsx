@@ -9,7 +9,7 @@ export default function Card() {
         <div className="bg-yellow flex items-center justify-center gap-2 rounded-[0.25rem] px-3 py-1 text-xs font-extrabold lg:text-sm">
           Learning
         </div>
-        <h2 className="text-xs font-medium leading-[1.125rem] lg:text-sm">Published 21 Dec 2023</h2>
+        <p className="text-xs font-medium leading-[1.125rem] lg:text-sm">Published 21 Dec 2023</p>
         <h1 className="hover:text-yellow cursor-pointer text-xl font-extrabold leading-[1.875rem] lg:text-2xl lg:leading-[2.25rem]">
           HTML & CSS foundations
         </h1>
@@ -19,7 +19,7 @@ export default function Card() {
       </div>
       <div className="flex items-center gap-3">
         <img src={avatar} alt="Avatar" className="h-8 w-8 rounded-full" />
-        <h3 className="text-sm font-extrabold leading-[1.3125rem]">Greg Hooper</h3>
+        <h2 className="text-sm font-extrabold leading-[1.3125rem]">Greg Hooper</h2>
       </div>
     </div>
   )
